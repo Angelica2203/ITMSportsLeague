@@ -7,7 +7,6 @@ using SportsLeague.Domain.Interfaces.Services;
 
 namespace SportsLeague.API.Controllers
 {
-
     [ApiController]
     [Route("api/[controller]")]
     public class PlayerController : ControllerBase
