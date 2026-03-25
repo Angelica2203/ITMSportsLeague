@@ -117,5 +117,4 @@ namespace SportsLeague.API.Controllers
             }
         }
     }
-
 }
