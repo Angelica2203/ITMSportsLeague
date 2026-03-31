@@ -25,7 +25,7 @@ namespace SportsLeague.DataAccess.Repositories
                 .Where(t => t.Id == id)
                 .Include(t => t.TournamentTeams)
                     .ThenInclude(tt => tt.Team)
-                //.ThenInclude(t => t.Players) // si quieres incluir también los jugadores de cada equipo
+                //.ThenInclude(t => t.Players) // si quiero incluir también los jugadores de cada equipo
                 .FirstOrDefaultAsync();
 
             //primero estoy en torneo ---> luego para recuperar los equipos de ese torneo
