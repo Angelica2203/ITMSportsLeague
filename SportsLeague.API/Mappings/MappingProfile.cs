@@ -31,6 +31,13 @@ namespace SportsLeague.API.Mappings
                     dest => dest.TeamsCount,
                     opt => opt.MapFrom(src =>
                         src.TournamentTeams != null ? src.TournamentTeams.Count : 0));//condicion ternaria
+
+            // Sponsor mappings
+            CreateMap<SponsorRequestDTO, Sponsor>();
+            CreateMap<Sponsor, SponsorResponseDTO>();
+
+
+
         }
     }
 
