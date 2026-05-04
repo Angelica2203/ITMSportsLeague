@@ -33,8 +33,14 @@ namespace SportsLeague.API.Controllers
                 var created = await _matchEventService.RegisterResultAsync(matchId, result);
                 return Ok(_mapper.Map<MatchResultResponseDTO>(created));
             }
-            catch (KeyNotFoundException ex) { return NotFound(new { message = ex.Message }); }
-            catch (InvalidOperationException ex) { return Conflict(new { message = ex.Message }); }
+            catch (KeyNotFoundException ex) 
+            { 
+                return NotFound(new { message = ex.Message }); 
+            }
+            catch (InvalidOperationException ex) 
+            { 
+                return Conflict(new { message = ex.Message }); 
+            }
         }
 
         [HttpGet("result")]
@@ -47,7 +53,10 @@ namespace SportsLeague.API.Controllers
                     return NotFound(new { message = "Este partido aún no tiene resultado" });
                 return Ok(_mapper.Map<MatchResultResponseDTO>(result));
             }
-            catch (KeyNotFoundException ex) { return NotFound(new { message = ex.Message }); }
+            catch (KeyNotFoundException ex) 
+            { 
+                return NotFound(new { message = ex.Message }); 
+            }
         }
 
         // ═══ Goals ═══
@@ -64,8 +73,14 @@ namespace SportsLeague.API.Controllers
                 var createdGoal = goals.FirstOrDefault(g => g.Id == created.Id);
                 return Ok(_mapper.Map<GoalResponseDTO>(createdGoal));
             }
-            catch (KeyNotFoundException ex) { return NotFound(new { message = ex.Message }); }
-            catch (InvalidOperationException ex) { return Conflict(new { message = ex.Message }); }
+            catch (KeyNotFoundException ex) 
+            { 
+                return NotFound(new { message = ex.Message }); 
+            }
+            catch (InvalidOperationException ex) 
+            { 
+                return Conflict(new { message = ex.Message }); 
+            }
         }
 
         [HttpGet("goals")]
@@ -76,14 +91,23 @@ namespace SportsLeague.API.Controllers
                 var goals = await _matchEventService.GetGoalsByMatchAsync(matchId);
                 return Ok(_mapper.Map<IEnumerable<GoalResponseDTO>>(goals));
             }
-            catch (KeyNotFoundException ex) { return NotFound(new { message = ex.Message }); }
+            catch (KeyNotFoundException ex) 
+            { 
+                return NotFound(new { message = ex.Message }); 
+            }
         }
 
         [HttpDelete("goals/{goalId}")]
         public async Task<ActionResult> DeleteGoal(int matchId, int goalId)
         {
-            try { await _matchEventService.DeleteGoalAsync(goalId); return NoContent(); }
-            catch (KeyNotFoundException ex) { return NotFound(new { message = ex.Message }); }
+            try 
+            { 
+                await _matchEventService.DeleteGoalAsync(goalId); return NoContent(); 
+            }
+            catch (KeyNotFoundException ex) 
+            { 
+                return NotFound(new { message = ex.Message }); 
+            }
         }
 
         // ═══ Cards ═══
@@ -100,8 +124,14 @@ namespace SportsLeague.API.Controllers
                 var createdCard = cards.FirstOrDefault(c => c.Id == created.Id);
                 return Ok(_mapper.Map<CardResponseDTO>(createdCard));
             }
-            catch (KeyNotFoundException ex) { return NotFound(new { message = ex.Message }); }
-            catch (InvalidOperationException ex) { return Conflict(new { message = ex.Message }); }
+            catch (KeyNotFoundException ex) 
+            { 
+                return NotFound(new { message = ex.Message }); 
+            }
+            catch (InvalidOperationException ex) 
+            { 
+                return Conflict(new { message = ex.Message }); 
+            }
         }
 
         [HttpGet("cards")]
@@ -112,14 +142,20 @@ namespace SportsLeague.API.Controllers
                 var cards = await _matchEventService.GetCardsByMatchAsync(matchId);
                 return Ok(_mapper.Map<IEnumerable<CardResponseDTO>>(cards));
             }
-            catch (KeyNotFoundException ex) { return NotFound(new { message = ex.Message }); }
+            catch (KeyNotFoundException ex) 
+            { 
+                return NotFound(new { message = ex.Message }); 
+            }
         }
 
         [HttpDelete("cards/{cardId}")]
         public async Task<ActionResult> DeleteCard(int matchId, int cardId)
         {
             try { await _matchEventService.DeleteCardAsync(cardId); return NoContent(); }
-            catch (KeyNotFoundException ex) { return NotFound(new { message = ex.Message }); }
+            catch (KeyNotFoundException ex) 
+            { 
+                return NotFound(new { message = ex.Message }); 
+            }
         }
     }
 
