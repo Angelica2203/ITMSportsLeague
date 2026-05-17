@@ -23,6 +23,7 @@ namespace SportsLeague.DataAccess.Repositories
                 .Where(ml => ml.MatchId == matchId &&
                              ml.Player.TeamId == teamId)
                 .Include(ml => ml.Player)
+                .ThenInclude(p => p.Team)
                 .OrderBy(ml => ml.IsStarter ? 0 : 1)
                 .ToListAsync();
         }
