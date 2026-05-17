@@ -54,6 +54,7 @@ namespace SportsLeague.Domain.Helpers
                 throw new InvalidOperationException(
                     "El minuto debe estar entre 1 y 120");
         }
+
     }
 
 }

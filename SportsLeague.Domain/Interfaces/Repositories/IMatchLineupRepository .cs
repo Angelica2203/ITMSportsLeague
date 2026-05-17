@@ -1,0 +1,17 @@
+﻿using SportsLeague.Domain.Entities;
+
+namespace SportsLeague.Domain.Interfaces.Repositories
+{
+    public interface IMatchLineupRepository : IGenericRepository<MatchLineup>
+    {
+        Task<IEnumerable<MatchLineup>> GetByMatchAsync(int matchId);
+
+        Task<IEnumerable<MatchLineup>> GetByMatchAndTeamAsync(int matchId, int teamId);
+
+        Task<IEnumerable<MatchLineup>> GetByMatchWithDetailsAsync(int matchId);
+
+        Task<bool> ExistsAsync(int matchId, int playerId);
+
+        Task<int> CountStartersByTeamAsync(int matchId, int teamId);
+    }
+}
