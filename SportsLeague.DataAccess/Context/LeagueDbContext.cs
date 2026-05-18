@@ -21,6 +21,7 @@ namespace SportsLeague.DataAccess.Context
         public DbSet<MatchResult> MatchResults => Set<MatchResult>();
         public DbSet<Goal> Goals => Set<Goal>();
         public DbSet<Card> Cards => Set<Card>();
+        public DbSet<MatchLineup> MatchLineups => Set<MatchLineup>();
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
