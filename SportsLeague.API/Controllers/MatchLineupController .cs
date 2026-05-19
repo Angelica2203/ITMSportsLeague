@@ -22,7 +22,6 @@ namespace SportsLeague.API.Controllers
             _mapper = mapper;
         }
 
-        // ═══ MatchLineup ═══
 
         [HttpPost]
         public async Task<ActionResult<MatchLineupDto>> RegisterLineup(
