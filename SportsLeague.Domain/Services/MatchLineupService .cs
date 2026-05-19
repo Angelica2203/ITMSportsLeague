@@ -26,7 +26,6 @@ namespace SportsLeague.Domain.Services
             _logger = logger;
         }
 
-        // ═══ MatchLineup ═══
 
         public async Task<MatchLineup> RegisterLineupAsync(
             int matchId, MatchLineup lineup)
