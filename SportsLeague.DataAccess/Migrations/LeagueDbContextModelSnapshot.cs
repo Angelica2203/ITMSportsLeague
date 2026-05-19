@@ -180,7 +180,7 @@ namespace SportsLeague.DataAccess.Migrations
                     b.HasIndex("MatchId", "PlayerId")
                         .IsUnique();
 
-                    b.ToTable("MatchLineup");
+                    b.ToTable("MatchLineup", (string)null);
                 });
 
             modelBuilder.Entity("SportsLeague.Domain.Entities.MatchResult", b =>

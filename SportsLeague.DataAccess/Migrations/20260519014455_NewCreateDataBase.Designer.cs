@@ -12,8 +12,8 @@ using SportsLeague.DataAccess.Context;
 namespace SportsLeague.DataAccess.Migrations
 {
     [DbContext(typeof(LeagueDbContext))]
-    [Migration("20260517214548_New_Table_MatchLineUp")]
-    partial class New_Table_MatchLineUp
+    [Migration("20260519014455_NewCreateDataBase")]
+    partial class NewCreateDataBase
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -183,7 +183,7 @@ namespace SportsLeague.DataAccess.Migrations
                     b.HasIndex("MatchId", "PlayerId")
                         .IsUnique();
 
-                    b.ToTable("MatchLineup");
+                    b.ToTable("MatchLineup", (string)null);
                 });
 
             modelBuilder.Entity("SportsLeague.Domain.Entities.MatchResult", b =>

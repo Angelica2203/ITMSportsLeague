@@ -324,6 +324,8 @@ namespace SportsLeague.DataAccess.Context
             // ── MatchLineup Configuration ──
             modelBuilder.Entity<MatchLineup>(entity =>
             {
+                entity.ToTable("MatchLineup");
+
                 entity.HasKey(ml => ml.Id);
 
                 entity.Property(ml => ml.IsStarter)
